@@ -22,7 +22,7 @@ class SharedException(Exception, Generic[T]) :
         self.message = message
         self.status_code = status_code
         self.error_code = error_code
-        self.errors = T | None = errors
+        self.errors: T | None = errors
         super().__init__(message)
 
 class BadRequestException(SharedException[T]) :
